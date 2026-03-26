@@ -14,7 +14,7 @@ Modern Tooling: Managed with uv, the next-generation Python package manager, for
 ## 📸 Preview
 
 ### 1. API Documentation (Swagger UI)
-![Swagger UI Screenshot](assets/swagger_full.png)
+![Swagger UI Screenshot](assets/swagger_ui.png)
 
 ### 2. Smart AI Response
 ![AI Response Screenshot](assets/ai_response.png)
