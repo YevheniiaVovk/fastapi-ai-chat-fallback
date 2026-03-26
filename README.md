@@ -14,14 +14,10 @@ Modern Tooling: Managed with uv, the next-generation Python package manager, for
 ## 📸 Preview
 
 ### 1. API Documentation (Swagger UI)
-API Documentation (Swagger UI)
-A comprehensive look at all available endpoints, including authentication and chat management.
 ![Swagger UI Screenshot](assets/swagger_full.png)
 
 ### 2. Smart AI Response
-An example of the chat in action, demonstrating how the API identifies which model was used for the response.
 ![AI Response Screenshot](assets/ai_response.png)
-📸 Preview
 
 🛠 Tech Stack
 Framework: FastAPI
