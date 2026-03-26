@@ -1,16 +1,14 @@
-AI Chat API (FastAPI + JWT + Hybrid AI)
-This is a high-performance Backend API built with FastAPI. It features a robust user authentication system and a smart AI chat interface. The standout feature of this project is its Intelligent Fallback Mechanism, ensuring the chat remains functional even if one AI provider hits its limits.
+# AI Chat API (FastAPI + JWT + Hybrid AI)
 
-🌟 Key Features
-Hybrid AI Strategy: Seamlessly integrates both OpenAI GPT and Google Gemini.
+This is a high-performance Backend API built with **FastAPI**. It features a robust user authentication system and a smart AI chat interface with an **Intelligent Fallback Mechanism**.
 
-Intelligent Fallback: If the OpenAI service returns a "Quota Exceeded" error (429), the system automatically reroutes the request to Gemini. The user never sees a failure.
+## 🌟 Key Features
+* **Hybrid AI Strategy**: Seamlessly integrates both OpenAI GPT and Google Gemini.
+* **Intelligent Fallback**: If OpenAI hits a quota limit (429), the system automatically reroutes to Gemini.
+* **Secure JWT Authentication**: Full registration and login flow using JSON Web Tokens.
+* **Persistent History**: All messages are stored in a SQLite database via SQLAlchemy ORM.
+* **Modern Tooling**: Managed with `uv` for fast and reproducible environments.
 
-Secure JWT Authentication: Full registration and login flow using JSON Web Tokens and password hashing with bcrypt.
-
-Persistent Conversation History: All messages are stored in a SQLite database via SQLAlchemy ORM, providing users with their past chat context.
-
-Modern Tooling: Managed with uv, the next-generation Python package manager, for reproducible and fast environments.
 ## 📸 Preview
 
 ### 1. API Documentation (Swagger UI)
@@ -19,50 +17,37 @@ Modern Tooling: Managed with uv, the next-generation Python package manager, for
 ### 2. Smart AI Response
 ![AI Response Screenshot](assets/ai_response.png)
 
-🛠 Tech Stack
-Framework: FastAPI
+## 🛠 Tech Stack
+* **Framework**: FastAPI
+* **Database**: SQLite & SQLAlchemy (ORM)
+* **Security**: JWT (python-jose), Passlib (bcrypt)
+* **AI SDKs**: OpenAI SDK, Google-GenAI
+* **Environment**: Pydantic Settings
+* **Package Manager**: uv
 
-Database: SQLite & SQLAlchemy (ORM)
+## 🔒 Security & Authorization
+This project follows the **OAuth2** standard. 
+1. Users register via `/auth/registration`.
+2. Users receive a **JWT Access Token** upon login at `/auth/login`.
+3. The token is required for all `/api/` endpoints to access private chat history.
 
-Security: JWT (python-jose), Passlib (bcrypt)
+## ⚙️ Installation & Setup
 
-AI SDKs: openai SDK, google-genai
-
-Environment: Pydantic Settings (BaseSettings)
-
-Package Manager: uv
-
-🔒 Security & Authorization
-This project follows the OAuth2 standard with Password flow and Bearer tokens.
-
-Users register via /auth/registration.
-
-Users receive a JWT Access Token upon a successful login at /auth/login.
-
-The token is required for all /api/ endpoints, ensuring that users can only access their own private chat history.
-
-⚙️ Installation & Setup
-Clone the repository:
-
-Bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/YevheniiaVovk/fastapi-ai-chat-fallback.git
+   cd fastapi-ai-chat-fallback
 Install dependencies:
-Using uv (recommended):
 
 Bash
 uv sync
-Or via pip:
-
-Bash
-pip install -r requirements.txt
 Environment Configuration:
-Create a .env file in the root directory and add your credentials:
+Create a .env file in the root directory:
 
 Code snippet
-GEMINI_API_KEY=your_google_api_key
-CHAT_GPT_API_KEY=your_openai_api_key
-SECRET_KEY=your_random_secret_string
+GEMINI_API_KEY=your_key
+CHAT_GPT_API_KEY=your_key
+SECRET_KEY=your_secret
 ALGORITHM=HS256
 Run the application:
 
