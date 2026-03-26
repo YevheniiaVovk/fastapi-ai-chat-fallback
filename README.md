@@ -11,13 +11,17 @@ Secure JWT Authentication: Full registration and login flow using JSON Web Token
 Persistent Conversation History: All messages are stored in a SQLite database via SQLAlchemy ORM, providing users with their past chat context.
 
 Modern Tooling: Managed with uv, the next-generation Python package manager, for reproducible and fast environments.
+## 📸 Preview
 
-📸 Preview
-1. API Documentation (Swagger UI)
+### 1. API Documentation (Swagger UI)
+API Documentation (Swagger UI)
 A comprehensive look at all available endpoints, including authentication and chat management.
+![Swagger UI Screenshot](assets/swagger_full.png)
 
-2. Smart AI Response
+### 2. Smart AI Response
 An example of the chat in action, demonstrating how the API identifies which model was used for the response.
+![AI Response Screenshot](assets/ai_response.png)
+📸 Preview
 
 🛠 Tech Stack
 Framework: FastAPI
