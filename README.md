@@ -37,12 +37,11 @@ This project follows the **OAuth2** standard.
    ```bash
    git clone https://github.com/YevheniiaVovk/fastapi-ai-chat-fallback.git
    cd fastapi-ai-chat-fallback
-Install dependencies:
-
-Bash
-uv sync
-Environment Configuration:
-Create a .env file in the root directory:
+2. **Install dependencies**:
+   ```bash
+   uv sync
+3. **Environment Configuration**:
+```Create a .env file in the root directory:
 
 Code snippet
 GEMINI_API_KEY=your_key
