@@ -40,7 +40,7 @@ This project follows the **OAuth2** standard.
 2. **Install dependencies**:
    ```bash
    uv sync
-3. **Environment Configuration**:
+Environment Configuration:
 ```Create a .env file in the root directory:
 
 Code snippet
